@@ -1,6 +1,9 @@
-def add(x, y): return x + y
-# ... (other ops)
 def main():
- while True: #menu loop here
-  pass
-main()
+ while True:
+  op=input();if op=='q':break
+  a,b=map(int,input().split())
+  if op=='+':print(a+b)
+  elif op=='-':print(a-b)
+  elif op=='*':print(a*b)
+  elif op=='/':print(a/b)
+if __name__=
