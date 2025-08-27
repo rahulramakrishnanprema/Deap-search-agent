@@ -5,9 +5,6 @@ def subtract(a, b):
         a: The minuend.
         b: The subtrahend.
 
-    Returns:
-        The difference between a and b.
-
     Raises:
         TypeError: If either a or b is not a number.
     """
@@ -15,8 +12,9 @@ def subtract(a, b):
         raise TypeError("Both inputs must be numbers.")
     return a - b
 
-# Assume calculator menu structure is already implemented
+# Example integration into a calculator menu (assuming menu structure exists)
 def calculator_menu():
+    # ... existing menu code ...
     while True:
         # ... existing menu code ...
         if choice == 'subtract':
@@ -29,7 +27,7 @@ def calculator_menu():
                 print(f"Error: {e}")
             except ValueError:
                 print("Invalid input. Please enter numbers only.")
-        # ... rest of the menu ...
+        # ... existing menu code ...
 
-# Example usage (if running this file directly):
+# Example usage (uncomment to test):
 #calculator_menu()
