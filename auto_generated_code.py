@@ -1,3 +1,3 @@
 # Auto-generated code for issue CAL-7
-# Prompt: Implement input validation for a calculator application.  The function should only accept numeric input. If non-numeric input is provided, display an error message and re-prompt the user for input until a valid number is entered.  Return the validated numeric input.
+# Prompt: Write a function that takes numerical input from the user, repeatedly prompting until valid numeric input is received.  If invalid input (non-numeric) is entered, display an error message "Invalid input. Please enter a number." before prompting again.  The function should return the valid numeric input as a float.
 print('Hello from automation!')
