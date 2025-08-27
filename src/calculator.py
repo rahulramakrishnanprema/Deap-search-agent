@@ -1,26 +1,49 @@
-def add(numbers: list) -> float:
-    """Calculates the sum of a list of numbers.
+def add(x, y):
+    return x + y
 
-    Args:
-        numbers: A list of numbers to sum.
+def subtract(x, y):
+    return x - y
 
-    Returns:
-        The sum of the numbers in the list.
+def multiply(x, y):
+    return x * y
 
-    Raises:
-        TypeError: If any element in the list is not a number.
-    """
-    total = 0
-    for number in numbers:
-        if not isinstance(number, (int, float)):
-            raise TypeError("All elements in the list must be numbers.")
-        total += number
-    return total
+def divide(x, y):
+    try:
+        return x / y
+    except ZeroDivisionError:
+        return "Division by zero!"
 
-# Example usage (assuming this is integrated into a larger calculator program):
-# numbers = [1, 2, 3, 4, 5]
-# try:
-#     result = add(numbers)
-#     print(f"The sum is: {result}")
-# except TypeError as e:
-#     print(f"Error: {e}")
+while True:
+    print("Select operation:")
+    print("1.Add")
+    print("2.Subtract")
+    print("3.Multiply")
+    print("4.Divide")
+    print("5.Exit")
+    
+    choice = input("Enter choice(1/2/3/4/5): ")
+
+    if choice == '5':
+        break
+
+    if choice in ('1', '2', '3', '4'):
+        try:
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
+        except ValueError:
+            print("Invalid input. Please enter numbers only.")
+            continue
+
+        if choice == '1':
+            print(num1, "+", num2, "=", add(num1, num2))
+
+        elif choice == '2':
+            print(num1, "-", num2, "=", subtract(num1, num2))
+
+        elif choice == '3':
+            print(num1, "*", num2, "=", multiply(num1, num2))
+
+        elif choice == '4':
+            print(num1, "/", num2, "=", divide(num1, num2))
+    else:
+        print("Invalid input")
