@@ -1,4 +1,4 @@
-def add(numbers: list) -> float:
+def add(numbers: list):
     """Calculates the sum of a list of numbers.
 
     Args:
@@ -8,19 +8,21 @@ def add(numbers: list) -> float:
         The sum of the numbers in the list.
 
     Raises:
-        TypeError: If any element in the list is not a number.
+        TypeError: If the input list contains non-numeric values.
     """
-    total = 0
-    for number in numbers:
-        if not isinstance(number, (int, float)):
-            raise TypeError("All elements in the list must be numbers.")
-        total += number
-    return total
+    if not all(isinstance(num, (int, float)) for num in numbers):
+        raise TypeError("Input list must contain only numbers.")
+    return sum(numbers)
 
-# Example usage (assuming this is integrated into a larger calculator program):
-# numbers = [1, 2, 3, 4, 5]
-# try:
-#     result = add(numbers)
-#     print(f"The sum is: {result}")
-# except TypeError as e:
-#     print(f"Error: {e}")
+# Example integration within a calculator program
+if __name__ == "__main__":
+    try:
+        numbers = [1, 2, 3, 4, 5]
+        result = add(numbers)
+        print(f"The sum is: {result}")
+
+        invalid_numbers = [1, 2, 'a', 4, 5]
+        result = add(invalid_numbers)
+        print(f"The sum is: {result}") #This line should not be reached
+    except TypeError as e:
+        print(f"Error: {e}")
