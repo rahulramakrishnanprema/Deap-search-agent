@@ -1,26 +1,35 @@
-def add(numbers: list) -> float:
-    """Calculates the sum of a list of numbers.
+def subtract(a, b):
+    """Subtracts b from a.
 
     Args:
-        numbers: A list of numbers to sum.
+        a: The minuend.
+        b: The subtrahend.
 
     Returns:
-        The sum of the numbers in the list.
+        The difference between a and b.
 
     Raises:
-        TypeError: If any element in the list is not a number.
+        TypeError: If either a or b is not a number.
     """
-    total = 0
-    for number in numbers:
-        if not isinstance(number, (int, float)):
-            raise TypeError("All elements in the list must be numbers.")
-        total += number
-    return total
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        raise TypeError("Both inputs must be numbers.")
+    return a - b
 
-# Example usage (assuming this is integrated into a larger calculator program):
-# numbers = [1, 2, 3, 4, 5]
-# try:
-#     result = add(numbers)
-#     print(f"The sum is: {result}")
-# except TypeError as e:
-#     print(f"Error: {e}")
+# Assume calculator menu structure is already implemented
+def calculator_menu():
+    while True:
+        # ... existing menu code ...
+        if choice == 'subtract':
+            try:
+                a = float(input("Enter minuend: "))
+                b = float(input("Enter subtrahend: "))
+                result = subtract(a, b)
+                print(f"Result: {result}")
+            except TypeError as e:
+                print(f"Error: {e}")
+            except ValueError:
+                print("Invalid input. Please enter numbers only.")
+        # ... rest of the menu ...
+
+# Example usage (if running this file directly):
+#calculator_menu()
