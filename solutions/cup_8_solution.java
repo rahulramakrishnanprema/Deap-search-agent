@@ -1,57 +1,33 @@
 // Auto-generated java solution for CUP-8
-    // Generated: 2025-08-28 19:55:18
-    // Requirement: Write a Java function that takes two integer arguments and returns their sum.  Handle potential integer overflow.
+    // Generated: 2025-08-28 19:56:14
+    // Requirement: Write a Java program that takes two integer inputs from the user, adds them, and prints the sum to the console.  Handle potential `NumberFormatException`.
 
-    import java.math.BigInteger;
+    import java.util.Scanner;
 
-public class IntegerAdder {
-
-    /**
-     * Adds two integers, handling potential integer overflow.
-     *
-     * @param a The first integer.
-     * @param b The second integer.
-     * @return The sum of a and b, or null if overflow occurs.
-     */
-    public static BigInteger addIntegers(int a, int b) {
-        try {
-            return BigInteger.valueOf(a).add(BigInteger.valueOf(b));
-        } catch (ArithmeticException e) {
-            return null; // Indicate overflow
-        }
-    }
-
+public class Adder {
 
     public static void main(String[] args) {
-        int a = Integer.MAX_VALUE;
-        int b = 1;
+        Scanner scanner = new Scanner(System.in);
 
-        BigInteger sum = addIntegers(a, b);
+        int num1 = 0;
+        int num2 = 0;
 
-        if (sum != null) {
-            System.out.println("Sum: " + sum);
-        } else {
-            System.out.println("Integer overflow occurred.");
+        try {
+            System.out.print("Enter the first integer: ");
+            num1 = Integer.parseInt(scanner.nextLine());
+
+            System.out.print("Enter the second integer: ");
+            num2 = Integer.parseInt(scanner.nextLine());
+
+        } catch (NumberFormatException e) {
+            System.err.println("Invalid input. Please enter integers only.");
+            scanner.close();
+            return;
         }
 
-
-        a = Integer.MIN_VALUE;
-        b = -1;
-        sum = addIntegers(a,b);
-        if (sum != null) {
-            System.out.println("Sum: " + sum);
-        } else {
-            System.out.println("Integer overflow occurred.");
-        }
-
-        a = 10;
-        b = 20;
-        sum = addIntegers(a,b);
-        if (sum != null) {
-            System.out.println("Sum: " + sum);
-        } else {
-            System.out.println("Integer overflow occurred.");
-        }
+        int sum = num1 + num2;
+        System.out.println("The sum is: " + sum);
+        scanner.close();
     }
 }
 
