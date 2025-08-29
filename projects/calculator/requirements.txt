@@ -1,0 +1,36 @@
+# Requirements for a simple Python calculator project.  Adjust as needed for more advanced features.
+
+# For handling command-line arguments (if applicable)
+argparse>=1.4.0
+
+# For testing (optional, but highly recommended)
+pytest>=7.0.0
+pytest-cov>=4.0.0  # For code coverage reporting
+
+# For creating a graphical user interface (GUI) - choose one option below, or remove if using a command-line interface
+# Option 1: Tkinter (built-in to Python) - no additional dependencies needed
+
+# Option 2: PyQt5 (more powerful GUI framework)
+# PyQt5>=5.15.0
+
+# Option 3: Kivy (modern, touch-friendly GUI)
+# kivy>=2.1.0
+
+# Option 4: PySimpleGUI (easy to use GUI framework)
+# PySimpleGUI>=4.58.0
+
+
+# For handling numerical operations with potentially large numbers or decimals (optional)
+# decimal>=3.0.0
+
+# For handling complex numbers (optional)
+# cmath>=1.0.0
+
+# For logging (optional, but good practice for larger projects)
+logging>=1.0.0
+```
+
+**Explanation:**
+
+* **`argparse`:**  Used if your calculator takes input arguments from the command line.
+* **`pytest` and
