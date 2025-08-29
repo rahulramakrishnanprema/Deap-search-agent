@@ -1,0 +1,23 @@
+# Requirements for a simple Python calculator project.  Adjust as needed for more advanced features.
+
+# For handling command-line arguments (if applicable)
+argparse>=1.4.0
+
+# For testing (optional, but highly recommended)
+pytest>=7.0.0
+pytest-cov>=4.0.0  # For code coverage reporting
+
+# For creating a GUI (optional, choose one or none)
+# tkinter is built-in to Python, so no installation needed if using it.
+# PyQt5 or PySide6 are alternatives, but require installation:
+# PyQt5>=5.15.0
+# PySide6>=6.5.0
+
+# For handling decimal numbers with arbitrary precision (optional)
+# decimal>=3.0.0
+
+# For handling complex numbers (optional)
+# cmath  # This is built-in to Python, so no installation needed.
+
+# For logging (optional, but good practice for larger projects)
+logging>=1.0.0
